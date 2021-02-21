@@ -14,7 +14,7 @@ echo "
 ################################################################################"
 gvmfeed_version=2.1
 build_gvmfeed=""
-docker build -f /build/Dockerfile \
+docker build -f ./Dockerfile \
   -t "darkthirtysecurity/gvmfeed:${gvmfeed_version}${build_gvmfeed:-${BUILD}}" \
   -t "darkthirtysecurity/gvmfeed:latest" .
 
