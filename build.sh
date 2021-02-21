@@ -10,16 +10,16 @@ cd ./build
 # build gvm-feed-server
 echo "
 ################################################################################
-################### Build gvm-feed-server ##############################################
+################### Build gvm-feed ##############################################
 ################################################################################"
-gvm_feed_server_version=2.1
-build_gvm_feed_server=""
+gvmfeed_version=2.1
+build_gvmfeed=""
 docker build -f ./Dockerfile \
-  -t "dgiorgio/gvm-feed-server:${gvm_feed_server_version}${build_gvm_feed_server:-${BUILD}}" \
-  -t "dgiorgio/gvm-feed-server:latest" .
+  -t "darkthirtysecurity/gvmfeed:${gvmfeed_version}${build_gvmfeed:-${BUILD}}" \
+  -t "darkthirtysecurity/gvmfeed:latest" .
 
 # push
 if [ "${1}" == "push" ]; then
-  docker push "dgiorgio/gvm-feed-server:${gvm_feed_server_version}${build_gvm_feed_server:-${BUILD}}"
-  docker push "dgiorgio/gvm-feed-server:latest"
+  docker push "darkthirtysecurity/gvmfeed:${gvm_feed_server_version}${build_gvm_feed_server:-${BUILD}}"
+  docker push "darkthirtysecurity/gvmfeed:latest"
 fi
